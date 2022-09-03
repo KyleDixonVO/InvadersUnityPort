@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PlayerHand : MonoBehaviour
 {
+    public GameObject player;
     public PlayerInventory inventory;
     public PlayerMovement_2D playerMovement;
     public Animator playerAnimator;
@@ -23,6 +24,7 @@ public class PlayerHand : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        player = GameObject.Find("Player");
         handSprite = GameObject.Find("Hand").GetComponent<SpriteRenderer>();
         inventory = GameObject.Find("Player").GetComponent<PlayerInventory>();
         playerMovement = GameObject.Find("Player").GetComponent<PlayerMovement_2D>();
@@ -38,41 +40,49 @@ public class PlayerHand : MonoBehaviour
             case "Anim_PlayerIdleBack" :
                 Debug.Log("Idle Back");
                 handDirection = HandDirection.Back;
+                this.transform.position = new Vector2(player.transform.position.x, player.transform.position.y + player.GetComponent<SpriteRenderer>().bounds.size.y/2);
                 break;
 
             case "Anim_PlayerWalkBack":
                 Debug.Log("Walk Back");
                 handDirection = HandDirection.Back;
+                this.transform.position = new Vector2(player.transform.position.x, player.transform.position.y + player.GetComponent<SpriteRenderer>().bounds.size.y / 2);
                 break;
 
             case "Anim_PlayerIdleForward":
                 Debug.Log("Idle Forward");
                 handDirection = HandDirection.Forward;
+                this.transform.position = new Vector2(player.transform.position.x, player.transform.position.y - player.GetComponent<SpriteRenderer>().bounds.size.y / 4);
                 break;
 
             case "Anim_PlayerWalkForward":
                 Debug.Log("Walk Forward");
                 handDirection = HandDirection.Forward;
+                this.transform.position = new Vector2(player.transform.position.x, player.transform.position.y - player.GetComponent<SpriteRenderer>().bounds.size.y / 4);
                 break;
 
             case "Anim_PlayerIdleLeft":
                 Debug.Log("Idle Left");
                 handDirection = HandDirection.Left;
+                this.transform.position = new Vector2(player.transform.position.x - player.GetComponent<SpriteRenderer>().bounds.size.x/2, player.transform.position.y);
                 break;
 
             case "Anim_PlayerWalkLeft":
                 Debug.Log("Walk Left");
                 handDirection = HandDirection.Left;
+                this.transform.position = new Vector2(player.transform.position.x - player.GetComponent<SpriteRenderer>().bounds.size.x / 2, player.transform.position.y);
                 break;
 
             case "Anim_PlayerIdleRight":
                 Debug.Log("Idle Right");
                 handDirection = HandDirection.Right;
+                this.transform.position = new Vector2(player.transform.position.x + player.GetComponent<SpriteRenderer>().bounds.size.x / 2, player.transform.position.y);
                 break;
 
             case "Anim_PlayerWalkRight":
                 Debug.Log("Walk Right");
                 handDirection = HandDirection.Right;
+                this.transform.position = new Vector2(player.transform.position.x + player.GetComponent<SpriteRenderer>().bounds.size.x / 2, player.transform.position.y);
                 break;
         }
 
