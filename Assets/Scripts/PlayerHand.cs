@@ -35,52 +35,52 @@ public class PlayerHand : MonoBehaviour
     void Update()
     {
         currentClipInfo = playerAnimator.GetCurrentAnimatorClipInfo(0);
-        Debug.Log(currentClipInfo[0].clip.name);
+        //Debug.Log(currentClipInfo[0].clip.name);
         switch (currentClipInfo[0].clip.name) {
             case "Anim_PlayerIdleBack" :
-                Debug.Log("Idle Back");
+                //Debug.Log("Idle Back");
                 handDirection = HandDirection.Back;
                 this.transform.position = new Vector2(player.transform.position.x, player.transform.position.y + player.GetComponent<SpriteRenderer>().bounds.size.y/2);
                 break;
 
             case "Anim_PlayerWalkBack":
-                Debug.Log("Walk Back");
+                //Debug.Log("Walk Back");
                 handDirection = HandDirection.Back;
                 this.transform.position = new Vector2(player.transform.position.x, player.transform.position.y + player.GetComponent<SpriteRenderer>().bounds.size.y / 2);
                 break;
 
             case "Anim_PlayerIdleForward":
-                Debug.Log("Idle Forward");
+                //Debug.Log("Idle Forward");
                 handDirection = HandDirection.Forward;
                 this.transform.position = new Vector2(player.transform.position.x, player.transform.position.y - player.GetComponent<SpriteRenderer>().bounds.size.y / 4);
                 break;
 
             case "Anim_PlayerWalkForward":
-                Debug.Log("Walk Forward");
+                //Debug.Log("Walk Forward");
                 handDirection = HandDirection.Forward;
                 this.transform.position = new Vector2(player.transform.position.x, player.transform.position.y - player.GetComponent<SpriteRenderer>().bounds.size.y / 4);
                 break;
 
             case "Anim_PlayerIdleLeft":
-                Debug.Log("Idle Left");
+                //Debug.Log("Idle Left");
                 handDirection = HandDirection.Left;
                 this.transform.position = new Vector2(player.transform.position.x - player.GetComponent<SpriteRenderer>().bounds.size.x/2, player.transform.position.y);
                 break;
 
             case "Anim_PlayerWalkLeft":
-                Debug.Log("Walk Left");
+                //Debug.Log("Walk Left");
                 handDirection = HandDirection.Left;
                 this.transform.position = new Vector2(player.transform.position.x - player.GetComponent<SpriteRenderer>().bounds.size.x / 2, player.transform.position.y);
                 break;
 
             case "Anim_PlayerIdleRight":
-                Debug.Log("Idle Right");
+                //Debug.Log("Idle Right");
                 handDirection = HandDirection.Right;
                 this.transform.position = new Vector2(player.transform.position.x + player.GetComponent<SpriteRenderer>().bounds.size.x / 2, player.transform.position.y);
                 break;
 
             case "Anim_PlayerWalkRight":
-                Debug.Log("Walk Right");
+                //Debug.Log("Walk Right");
                 handDirection = HandDirection.Right;
                 this.transform.position = new Vector2(player.transform.position.x + player.GetComponent<SpriteRenderer>().bounds.size.x / 2, player.transform.position.y);
                 break;

@@ -8,10 +8,12 @@ public class PlayerInventory : MonoBehaviour
     public bool shiftPressed = false;
     private PlayerMovement_2D player;
     public int weaponDamage;
-    public int weaponFireDelay;
+    public float weaponFireDelay;
     public int projectileSpeed;
     public bool canBounce = false;
     public bool canPierce = false;
+    public bool canFire = true;
+    public float fireDelayTime;
     public enum CurrentWeapon 
     { 
         pistol,
@@ -58,11 +60,16 @@ public class PlayerInventory : MonoBehaviour
             shiftPressed = false;
         }
 
+        if (spacePressed && canFire)
+        {
+            StartCoroutine(StartFireDelay());
+        }
+
         switch (currentWeapon) {
 
             case CurrentWeapon.pistol:
                 weaponDamage = 1;
-                weaponFireDelay = 333;
+                weaponFireDelay = 0.33f;
                 projectileSpeed = 10;
                 canBounce = false;
                 canPierce = false;
@@ -70,7 +77,7 @@ public class PlayerInventory : MonoBehaviour
 
             case CurrentWeapon.laser:
                 weaponDamage = 2;
-                weaponFireDelay = 500;
+                weaponFireDelay = 0.50f;
                 projectileSpeed = 10;
                 canBounce = true;
                 canPierce = false;
@@ -78,7 +85,7 @@ public class PlayerInventory : MonoBehaviour
 
             case CurrentWeapon.railgun:
                 weaponDamage = 10;
-                weaponFireDelay = 1333;
+                weaponFireDelay = 1.33f;
                 projectileSpeed = 20;
                 canBounce = false;
                 canPierce = true;
@@ -87,5 +94,22 @@ public class PlayerInventory : MonoBehaviour
 
     }
 
+    public IEnumerator StartFireDelay()
+    {
+        canFire = false;
+        fireDelayTime = weaponFireDelay;
+        while (fireDelayTime > 0)
+        {
+            Debug.Log("Fire Delay: " + fireDelayTime);
+            yield return new WaitForSeconds(0.01f);
+            fireDelayTime -= 0.01f;
+        }
+        canFire = true;
+    }
 
+    public void FireWeapon()
+    {
+
+    }
 }
+
