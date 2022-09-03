@@ -3253,7 +3253,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 99
+  m_SortingOrder: 90
   m_Sprite: {fileID: 21300000, guid: 4cc7d4d303fb5c842bd3a6eccf9e0310, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -13701,7 +13701,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 91
   m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -13727,3 +13727,27 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   inventory: {fileID: 0}
   playerMovement: {fileID: 0}
+  playerAnimator: {fileID: 0}
+  handSprite: {fileID: 0}
+  handSprites:
+  - {fileID: 21300000, guid: b02ff782a17fe4a48864c76115e5542f, type: 3}
+  - {fileID: 21300000, guid: e07e1cb31795aa441b6f2f8987278a1e, type: 3}
+  - {fileID: 21300000, guid: 7374af4f28e8be2409ca8e812b86bf40, type: 3}
+  - {fileID: 21300000, guid: d199a1eab8c8a3649a180fb62dfd057b, type: 3}
+  - {fileID: 21300000, guid: 26c859419f43e3d468e81d6122b501e8, type: 3}
+  - {fileID: 21300000, guid: a515280e92f8fc649951948aba2aea16, type: 3}
+  - {fileID: 21300000, guid: b0d9f16a0b8fcb84bbba7ca66739b55f, type: 3}
+  - {fileID: 21300000, guid: 59b73e43c078a6c4d8ea80cfe2121afa, type: 3}
+  - {fileID: 21300000, guid: adcf26539472f6e49b63bf347087c2c9, type: 3}
+  - {fileID: 21300000, guid: 15a8c5d9ccda1b94885f78e877cfe057, type: 3}
+  - {fileID: 21300000, guid: c4ab5d1a6bc02f54e99e5f4b138529e7, type: 3}
+  - {fileID: 21300000, guid: 87f22a112b4bffe469f745cefdc7a5eb, type: 3}
+  - {fileID: 21300000, guid: 9fb36d13e010bde4085473b86bb9cbe0, type: 3}
+  - {fileID: 21300000, guid: 891e145b1cd65a8478ea8404db3394cc, type: 3}
+  - {fileID: 21300000, guid: 536831ed4c53e8a4ba03a7bfb4c24f80, type: 3}
+  - {fileID: 21300000, guid: 000576df78ce0674282df5df0c3a72d5, type: 3}
+  - {fileID: 21300000, guid: e382bd8fb5743e34e83a304fa5c2f6b0, type: 3}
+  - {fileID: 21300000, guid: 741bc427ba853a24bac7f23bc0ecf42f, type: 3}
+  - {fileID: 21300000, guid: 0e3d33c2d3585fc43a87f4255c70de03, type: 3}
+  - {fileID: 21300000, guid: 53d084e21c7b0b240b46ff38d5b7bef3, type: 3}
+  handDirection: 0

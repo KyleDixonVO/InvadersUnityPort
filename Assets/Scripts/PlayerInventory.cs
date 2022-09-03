@@ -15,8 +15,8 @@ public class PlayerInventory : MonoBehaviour
     public enum CurrentWeapon 
     { 
         pistol,
-        railgun,
         laser,
+        railgun,
         rocket,
         tesla
     }
@@ -46,6 +46,11 @@ public class PlayerInventory : MonoBehaviour
             shiftPressed = true;
             Debug.Log("Shift Pressed");
             currentWeapon++;
+            if (currentWeapon > CurrentWeapon.railgun)
+            {
+                currentWeapon = CurrentWeapon.pistol;
+            }
+            Debug.Log(currentWeapon);
             
         }
         else
